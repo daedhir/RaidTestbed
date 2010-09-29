@@ -1,0 +1,12 @@
+## Interface: 30300
+## X-Compatible-With: 40000
+## Title: RaidTestbed
+## Notes: What a piece of junk
+## Author: Daedhir
+## Version: 0.1
+## SavedVariables: RaidTestbedDB
+## OptionalDeps: Ace3
+
+embeds.xml
+RaidTestbed.lua
+
