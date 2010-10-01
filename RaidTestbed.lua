@@ -119,7 +119,7 @@ RaidTestbed.options = {
 	       set = makeBuffOption,
 	       get = getBuffOption,
 	       multiline = false,
-	       usage = "Crap",
+	       usage = "Arcane Brilliance",
 	       order = 10,
 	    },
 	    makeDebuff = {
@@ -129,7 +129,7 @@ RaidTestbed.options = {
 	       set = makeDebuffOption,
 	       get = getDebuffOption,
 	       multiline = false,
-	       usage = "Crud",
+	       usage = "Frost Blast",
 	       --width = "half",
 	       order = 15,
 	    },
@@ -161,30 +161,6 @@ function RaidTestbed:LoadAuras()
    local ch = RaidTestbed.db.char
    for key, val in pairs(RaidTestbed.db.char.buffs) do
       ndx = RaidTestbedUtils:CreateAura(key, ndx)
---[[
-      opt.args.char.args[key.."Title"] = {
-	 type = "description",
-	 name = key,
-	 order = ndx,
-      }
-      ndx = ndx + 1
-
-      opt.args.char.args[key.."Overlay"] = {
-	 name = "Overlay",
-	 type = "toggle",
-	 desc = "Show frame overlay",
-	 set = setOpt,
-	 get = getOpt,
-	 width = "half",
-	 order = ndx,
-      }
-      if not ch[key.."Overlay"] then
-	 print("Assigning variable from default")
-	 ch[key.."Overlay"] = ch.buffs[key].Overlay
-      end
-
-      ndx = ndx + 1
-]]--
    end
 end
 
@@ -209,7 +185,7 @@ function RaidTestbed:OnEnable()
    local ACD = LibStub("AceConfigDialog-3.0")
    self.OptionsPanel = ACD:AddToBlizOptions(self.name, self.name, nil, "global")
    RaidTestbed:LoadAuras()
-   self.OptionsPanel.Char = ACD:AddToBlizOptions(self.name, "Char",
+   self.OptionsPanel.Char = ACD:AddToBlizOptions(self.name, "Auras",
 						 self.name, "char")
    self.OptionsPanel.Profiles = ACD:AddToBlizOptions(self.name, "Profiles",
 						     self.name, "profiles")
